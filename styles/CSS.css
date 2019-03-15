@@ -1,0 +1,44 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+.link {
+	color: black;
+}
+.link:hover {
+	text-decoration: none;
+	color: green;
+}
+
+#path {
+	background-color: #eae8e8;
+	padding: 5px 15px;
+}
+
+.title_of_news {
+	color: white;
+}
+.title_of_news:hover {
+	text-decoration: none;
+	color: #10b110;
+}
+.select_tags {
+	border: green solid 1px;
+	width: 100%;
+	background-color: #eae8e8;
+	padding: 5px 0px;
+}
+.filter_option {
+	margin: 10px 0px;
+}
+
+.price_filter {
+	padding: 0px 0px 0px 5px;
+	border: solid green 1px;
+}
+
+.simple_room_info_line {
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
