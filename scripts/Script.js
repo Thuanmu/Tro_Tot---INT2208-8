@@ -1,4 +1,5 @@
 function setUpXaPhuongFilter(obj) {
+
 	var BaDinh = ["Phúc Xá", "Trúc Bạch", "Vĩnh Phúc", "Cống Vị", "Liễu Giai", "Nguyễn Trung Trực", "Quán Thánh", "Ngọc Hà", "Điện Biên", "Đội Cấn", "Ngọc Khánh", "Kim Mã", "Giảng Võ", "Thành Công"];
 	var HoanKiem = ["Phúc Tân", "Đồng Xuân", "Hàng Mã", "Hàng Buồm", "Hàng Đào", "Hàng Bồ", "Cửa Đông", "Lý Thái Tổ", "Hàng Bạc", "Hàng Gai", "Chương Dương Độ", "Hàng Trống", "Cửa Nam", "Hàng Bông", "Tràng Tiền", "Trần Hưng Đạo", "Phan Chu Trinh", "Hàng Bài"];
 	var TayHo = ["Phú Thượng", "Nhật Tân", "Tứ Liên", "Quảng An", "Xuân La", "Yên Phụ", "Bưởi", "Thụy Khê"];
@@ -311,3 +312,90 @@ function setUpXaPhuongFilter(obj) {
 		}
 	}
 }
+
+/*Hiển thị khung đăng ký, đăng nhập khi click vào */
+$("#button_demo").click( function() { 
+	$("#login_background").css("display", "block");
+});
+
+
+/*Điều chỉnh chiều rộng của khung đăng nhập, đăng ký với các màn hình khác nhau*/
+if($(window).width() > 1200) {
+	$("#logIn_area").css("width", "35%");
+	$("#signIn_area").css("width", "35%");
+} else if ($(window).width() > 992) {
+	$("#logIn_area").css("width", "40%");
+	$("#signIn_area").css("width", "40%");
+} else if ($(window).width() > 768) {
+	$("#logIn_area").css("width", "45%");
+	$("#signIn_area").css("width", "45%");
+}  else {
+	$("#logIn_area").css("width", "80%");
+	$("#signIn_area").css("width", "80%");
+}
+$(window).resize(function() {
+	if($(window).width() > 1200) {
+		$("#logIn_area").css("width", "35%");
+		$("#signIn_area").css("width", "35%");
+	} else if ($(window).width() > 992) {
+		$("#logIn_area").css("width", "45%");
+		$("#signIn_area").css("width", "45%");
+	} else if ($(window).width() > 768) {
+		$("#logIn_area").css("width", "50%");
+		$("#signIn_area").css("width", "50%");
+	}  else {
+		$("#logIn_area").css("width", "70%");
+		$("#signIn_area").css("width", "70%");
+	}
+});
+
+/*Xử lý việc hiển thị khung đăng nhập, đăng ký khi click*/
+$("#signIn_button").click( function() { /*click vào nút đăng ký trên màn hình chính*/
+	$("#login_background").css("display", "block");
+	$("#logIn_area").css("display", "none");
+	$("#signIn_area").css("display", "block");
+	$(".logIn_menu_button").css("color", "black");
+	$(".signIn_menu_button").css("color", "green");
+});
+$("#logIn_button").click( function() { /*click vào nút đăng nhập trên màn hình chính*/
+	$("#login_background").css("display", "block");
+	$("#logIn_area").css("display", "block");
+	$("#signIn_area").css("display", "none");
+	$(".logIn_menu_button").css("color", "green");
+	$(".signIn_menu_button").css("color", "black");
+});
+$(".logIn_menu_button").click( function() { /*click vào nút đăng nhập trên khung đăng nhập*/
+	$("#logIn_area").css("display", "block");
+	$("#signIn_area").css("display", "none");
+	$(".logIn_menu_button").css("color", "green");
+	$(".signIn_menu_button").css("color", "black");
+});
+$(".signIn_menu_button").click( function() { /*click vào nút đăng ký trên khung đăng nhập*/
+	$("#logIn_area").css("display", "none");
+	$("#signIn_area").css("display", "block");
+	$(".logIn_menu_button").css("color", "black");
+	$(".signIn_menu_button").css("color", "green");
+});
+
+/*Tắt khung đăng nhập, đăng ký*/
+$(".close_login_icon").click( function() {
+	$("#login_background").css("display", "none");
+});
+
+/*Điều khiển hiển thị của phần menu*/
+if($('html,body').scrollTop()>50){
+         $('#menu_scroll').css("display", "block");
+      }
+      else {
+         $('#menu_scroll').css("display", "none");
+      }
+$(window).scroll( function(event) {
+	var pos_body = $('html,body').scrollTop();
+      // console.log(pos_body);
+      if(pos_body>50){
+         $('#menu_scroll').css("display", "block");
+      }
+      else {
+         $('#menu_scroll').css("display", "none");
+      }
+});
