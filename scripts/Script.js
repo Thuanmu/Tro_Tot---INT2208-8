@@ -1,312 +1,312 @@
 function setUpXaPhuongFilter(obj) {
 
-	var BaDinh = ["Phúc Xá", "Trúc Bạch", "Vĩnh Phúc", "Cống Vị", "Liễu Giai", "Nguyễn Trung Trực", "Quán Thánh", "Ngọc Hà", "Điện Biên", "Đội Cấn", "Ngọc Khánh", "Kim Mã", "Giảng Võ", "Thành Công"];
-	var HoanKiem = ["Phúc Tân", "Đồng Xuân", "Hàng Mã", "Hàng Buồm", "Hàng Đào", "Hàng Bồ", "Cửa Đông", "Lý Thái Tổ", "Hàng Bạc", "Hàng Gai", "Chương Dương Độ", "Hàng Trống", "Cửa Nam", "Hàng Bông", "Tràng Tiền", "Trần Hưng Đạo", "Phan Chu Trinh", "Hàng Bài"];
-	var TayHo = ["Phú Thượng", "Nhật Tân", "Tứ Liên", "Quảng An", "Xuân La", "Yên Phụ", "Bưởi", "Thụy Khê"];
-	var LongBien = ["Thượng Thanh", "Ngọc Thụy", "Giang Biên", "Đức Giang", "Việt Hưng", "Gia Thụy", "Ngọc Lâm", "Phúc Lợi", "Bồ Đề", "Sài Đồng", "Long Biên", "Thạch Bàn", "Phúc Đồng", "Cự Khối"];
-	var CauGiay = ["Nghĩa Đô", "Nghĩa Tân", "Mai Dịch", "Dịch Vọng", "Dịch Vọng Hậu", "Quan Hoa", "Yên Hòa", "Trung Hòa"];
-	var DongDa = ["Cát Linh", "Văn Miếu", "Quốc Tử Giám", "Láng Thượng", "Ô Chợ Dừa", "Văn Chương", "Hàng Bột", "Láng Hạ", "Khâm Thiên", "Thổ Quan", "Nam Đồng", "Trung Phụng", "Quang Trung", "Trung Liệt", "Phương Liên", "Thịnh Quang", "Trung Tự", "Kim Liên", "Phương Mai", "Ngã Tư Sở", "Khương Thượng"];
-	var HaiBaTrung = ["Nguyễn Du", "Bạch Đằng", "Phạm Đình Hổ", "Bùi Thị Xuân", "Ngô Thì Nhậm", "Lê Đại Hành", "Đồng Nhân", "Phố Huế", "Đống Mác", "Thanh Lương", "Thanh Nhàn", "Cầu Dền", "Bách Khoa", "Đồng Tâm", "Vĩnh Tuy", "Bạch Mai", "Bạch Lôi", "Quỳnh Lôi", "Minh Khai", "Trương Định"];
-	var HoangMai = ["Thanh Trì", "Vĩnh Hưng", "Định Công", "Mai Động", "Tương Mai","Đại Kim", "Tân Mai", "Hoàng Văn Thụ", "Giáp Bát", "Lĩnh Nam", "Thịnh Liệt", "Trần Phú", "Hoàng Liệt", "Yên Sở"];
-	var ThanhXuan = ["Nhân Chính", "Thượng Đình", "Khương Trung", "Khương Mai", "Thanh Xuân Trung", "Phương Liệt", "Hạ Đình", "Khương Đình", "Thanh Xuân Bắc", "Thanh Xuân Nam", "Kim Giang"];
-	var SocSon = ["Thị trấn Sóc Sơn", "Bắc Sơn", "Minh Trí", "Hồng Kì", "Nam Sơn", "Trung Giã", "Tân Hưng", "Minh Phú", "Phù Linh", "Bắc Sơn", "Tân Minh", "Quang Tiến", "Hiền Linh", "Tân Dân", "Tiên Dược", "Việt Long", "Xuân Giang", "Mai Đình", "Đức hòa", "Thanh Xuân", "Đông Xuân", "Kim Lũ", "Phú Cường", "Phú Minh", "Phù Lỗ", "Xuân Thu"];
-	var DongAnh = ["Thị trấn Đông Anh", "Xuân Nộn", "Thụy Lâm", "Bắc Hồng", "Nguyên Khê", "Nam Hồng", "Tiên Dương", "Vân Hà", "Uy Nỗ", "Vân Nội", "Liên Hà", "Việt Hùng", "Kim Nỗ", "Kim Chung", "Dục Tú", "Đại Mạch", "Vĩnh Ngọc", "Cỗ Loa", "Hải Bối", "Xuân Canh", "Võng La", "Tầm Xá", "Mai Lâm", "Đông Hội"];
-	var GiaLam = ["Thị trấn Yên Viên", "Thị trấn Trâu Quỳ", "Yên Thường", "Yên Viên", "Ninh Hiệp", "Đình Xuyên", "Dương Hà", "Phù Đổng", "Trung Mầu", "Lệ Chi", "Cổ Bi", "Đặng Xá", "Phú Thị", "Kim Sơn", "Dương Quang", "Dương Xá", "Đông Dư", "Đa Tốn", "Kiêu Kỵ", "Bát Tràng", "Kim Lan", "Văn Đức"];
-	var NamTuLiem = ["Cầu Diễn", "Đại Mỗ", "Mễ Trì", "Mỹ Đình 1", "Mỹ Đình 2", "Phú Đô", "Phương Canh", "Tây Mỗ", "Trung Văn", "Xuân Phương"];
-	var ThanhTri = ["Thị trấn Văn Điển", "Tân Triều", "Thanh Liệt", "Tả Thanh Oai", "Hữu Hòa", "Tam Hiệp", "Tứ Hiệp", "Yên Mỹ", "Vĩnh Quỳnh", "Ngũ Hiệp", "Duyên Hà", "Ngọc Hồi", "Vạn Phúc", "Đại Áng", "Liên Ninh", "Đông Mỹ"];
-	var BacTuLiem = ["Cổ Nhuế 1", "Cổ Nhuế 2", "Đông Ngạc", "Đức Thắng", "Liên Mạc", "Minh Khai", "Phú Diễn", "Phúc Diễn", "Tây Tựu", "Thụy Phương", "Thượng Cát", "Xuân Đỉnh", "Xuân Tảo"];
-	var MeLinh = ["Đại Thịnh", "Kim Hoa", "Thạch Đà", "Tiến Thắng", "Tự Lập", "Quang Minh", "Thanh Lâm", "Tam Đồng", "Liên Mạc", "Vạn Yên", "Chu Phan", "Tiến Thịnh", "Mê Linh", "Văn Khê", "Hoàng Kim", "Tiền Phong", "Tráng Việt", "Thị trấn Đông Chi"];
-	var HaDong = ["Nguyễn Trãi", "Văn Mỗ", "Vạn Phúc", "Yết Kiêu", "Quang Trung", "Văn Quán", "Hà Cầu", "La Khê", "Yên Nghĩa", "Kiến Hưng", "Phú Lãm", "Phú Lương", "Dương Nội", "Đồng Mai", "Biên Giang", "Mộ Lao", "Phú La"];
-	var SonTay = ["Lê Lợi", "Phú Thịnh", "Ngô Quyền", "Quang Trung", "Sơn Lộc", "Xuân Khanh", "Đường Lâm", "Viên Sơn", "Xuân Sơn", "Trung Hưng", "Thanh Mỹ", "Trung Sơn Trầm", "Kim Sơn", "Sơn Đông", "Cổ Đông"];
-	var BaVi = ["Thị trấn Tây Đằng", "Khánh Thượng", "Phú Cường", "Cổ Đô", "Tản Hồng", "Vạn Thắng", "Châu Sơn", "Phong Vân", "Phú Đông", "Phú Phương", "Phú Châu", "Thái Hòa", "Đồng Thái", "Phú Sơn", "Minh Châu", "Vật Lại", "Chu Minh", "Tòng Bạt", "Cẩm Lĩnh", "Sơn Đà", "Đông Quang", "Tiên Phong", "Thụy An", "Cam Thượng", "Thuần Mỹ", "Tản Lĩnh", "Ba Trại", "Minh Quang", "Ba Vì", "Vân Hòa", "Yên Bài"];
-	var PhucTho = ["Thị trấn Phúc Thọ", "Vân Hà", "Vân Phúc", "Vân Nam", "Xuân Phú", "Phương Độ", "Sen Chiểu", "Cẩm Đình", "Võng Xuyên", "Thọ Lộc", "Long Xuyên", "Thượng Cốc", "Hát Môn", "Tích Giang", "Thanh Đa", "Trạch Mỹ Lộc", "Phúc Hòa", "Ngọc Tảo", "Phụng Thượng", "Tam Thuấn", "Tam Hiệp", "Hiệp Thuận", "Liên Hiệp"];
-	var DanPhuong = ["Thị trấn Phùng", "Trung Châu", "Thọ An", "Thọ Xuân", "Hồng Hà", "Liên Hồng", "Liên Hà", "Hạ Mỗ", "Liên Trung", "Phương Đình", "Thượng Mỗ", "Tân Hội", "Tân Lập", "Đan Phượng", "Đồng Tháp", "Song Phượng"];
-	var HoaiDuc = ["Thị trấn Trạm Trôi", "Đức Thượng", "Minh Khai", "Dương Liễu", "Di Trạch", "Đức Giang", "Cát Quế", "Kim Chung", "Yên Sở", "Sơn Đồng", "Vân Canh", "Đắc Sở", "Lại Yên", "Tiến Yên", "Song Phương", "An Khánh", "An Thượng", "Vân Côn", "La Phù", "Đông La"];
-	var QuocOai = ["Thị trấn Quốc Oai", "Sài Sơn", "Thượng Cách", "Yên Sơn", "Ngọc Liệp", "Ngọc Mỹ", "Liệp Tuyết", "Thạch Thán", "Đồng Quang", "Phú Cát", "Tuyết Nghĩa", "Nghĩa Hương", "Cộng Hòa", "Tân Phú", "Đại Thành", "Phú Mãn", "Cấn Hữu", "Tân Hòa", "Hòa Thạch", "Đông Yên", "Đông Xuân"];
-	var ThachThat = ["Thị trấn Liên Quan", "Đại Đồng", "Cẩm Yên", "Lại Thượng", "Phú Kim", "Hương Ngải", "Canh Nậu", "Kim Quan", "Dị Nậu", "Bình Yên", "Chàng Sơn", "Thạch Hòa", "Cần Kiệm", "Hữu Bằng", "Phùng Xá", "Tân Xã", "Thạch Xá", "Bình Phú", "Hạ Bằng", "Đồng Trúc", "Yên Trung", "Yên Bình", "Tiến Xuân"];
-	var ChuongMy = ["Thị trấn Chúc Sơn", "Thị trấn Xuân Mai", "Phụng Châu", "Tiên Phương", "Đông Sơn", "Đông Phương Yên", "Phú Nghĩa", "Trường Yên", "Ngọc Hòa", "Thủy Xuân Tiên", "Thanh Bình", "Trung Hòa", "Đại Yên", "Thụy Hương", "Tốt Động", "Lam Điền", "Tân Tiến", "Nam Phương Tiến", "Hợp Đồng", "Hoàng Văn Thụ", "Hoàng Diệu", "Hữu Văn", "Quảng Bị", "Mỹ Lương", "Thượng Vực", "Hồng Phong", "Đồng Phú", "Trần Phú", "Văn Võ", "Đồng Lạc", "Hòa Chính", "Phú Nam An"];
-	var ThanhOai = ["Thị trấn Kim Bài", "Cự Khê", "Bích Hòa", "Mỹ Hưng", "Cao Viên", "Bình Minh", "Tam Hưng", "Thanh Cao", "Thanh Thùy", "Thanh Mai", "Thanh Văn", "Đỗ Động", "Kim An", "Kim Thư", "Phương Trung", "Tân Ước", "Dân Hòa", "Liên Châu", "Cao Dương"];
-	var ThuongTin = ["Thị trấn Thường Tín", "Ninh Sở", "Nhị Khê", "Duyên Thái", "Khánh Hà", "Hòa Bình", "Văn Bình", "Hiền Giang", "Hồng Vân", "Vân Tảo", "Liên Phương", "Văn Phú", "Tự Nhiên", "Tiền Phong", "Hà Hồi", "Thư Phú", "Nguyễn Trãi", "Quất Động", "Chương Dương", "Tân Minh", "Lê Lợi", "Thắng Lợi", "Dũng Tiến", "Thống Nhất", "Nghiêm Xuyên", "Tô Hiệu", "Văn Tự", "Vạn Điểm", "Minh Cường"];
-	var PhuXuyen = ["Thị trấn Phú Minh", "Thị trấn Phú Xuyên", "Hồng Minh", "Phượng Dực", "Văn Nhân", "Thụy Phú", "Tri Trung", "Đại Thắng", "Phú Túc", "Văn Hoàng", "Hồng Thái", "Hoàng Long", "Quang Trung", "Nam Phong", "Nam Chiều", "Tân Dân", "Sơn Hà", "Chuyên Mỹ", "Khai Thái", "Phúc Tiến", "Vân Từ", "Chi Thủy", "Đại Xuyên", "Phú Yên", "Bạch Hạ", "Quang Lãn", "Châu Can", "Minh Tân"];
-	var UngHoa = ["Thị trấn Vân Đình", "Viên An", "Viên Nội", "Hoa Sơn", "Quảng Phú Cầu", "Trường Thịnh", "Cao Thành", "Liên Bạt", "Sơn Công", "Đồng Tiến", "Phương Tú", "Trung Tú", "Đồng Tân", "Tảo Dương Văn", "Vạn Thái", "Minh Đức", "Hòa Lâm", "Hòa Xá", "Trầm Lộng", "Kim Đường", "Hòa Nam", "Hòa Phú", "Đội Bình", "Đại Hùng","Đông Lỗ", "Phù Lưu", "Đại Cường", "Lưu Hoàng", "Hồng Quang"];
-	var MyDuc = ["Thị trấn Đại Nghĩa", "Đồng Tâm", "Thượng Lâm", "Tuy Lai", "Phúc Lâm", "Mỹ Thành", "Bột Xuyên", "An Mỹ", "Hồng Sơn", "Lê Thanh", "Xuy Xá", "Phùng Xá", "Phù Lưu Tế", "Đại Hưng", "Vạn Kim", "Đốc Tín", "Hương Sơn", "Hùng Tiến", "An Tiến", "Hợp Tiến", "Hợp Thanh", "An Phú"];
+	var BaDinh = ["Phường Phúc Xá", "Phường Trúc Bạch", "Phường Vĩnh Phúc", "Phường Cống Vị", "Phường Liễu Giai", "Phường Nguyễn Trung Trực", "Phường Quán Thánh", "Phường Ngọc Hà", "Phường Điện Biên", "Phường Đội Cấn", "Phường Ngọc Khánh", "Phường Kim Mã", "Phường Giảng Võ", "Phường Thành Công"];
+	var HoanKiem = ["Phường Phúc Tân", "Phường Đồng Xuân", "Phường Hàng Mã", "Phường Hàng Buồm", "Phường Hàng Đào", "Phường Hàng Bồ", "Phường Cửa Đông", "Phường Lý Thái Tổ", "Phường Hàng Bạc", "Phường Hàng Gai", "Phường Chương Dương Độ", "Phường Hàng Trống", "Phường Cửa Nam", "Phường Hàng Bông", "Phường Tràng Tiền", "Phường Trần Hưng Đạo", "Phường Phan Chu Trinh", "Phường Hàng Bài"];
+	var TayHo = ["Phường Phú Thượng", "Phường Nhật Tân", "Phường Tứ Liên", "Phường Quảng An", "Phường Xuân La", "Phường Yên Phụ", "Phường Bưởi", "Phường Thụy Khê"];
+	var LongBien = ["Phường Thượng Thanh", "Phường Ngọc Thụy", "Phường Giang Biên", "Phường Đức Giang", "Phường Việt Hưng", "Phường Gia Thụy", "Phường Ngọc Lâm", "Phường Phúc Lợi", "Phường Bồ Đề", "Phường Sài Đồng", "Phường Long Biên", "Phường Thạch Bàn", "Phường Phúc Đồng", "Phường Cự Khối"];
+	var CauGiay = ["Phường Nghĩa Đô", "Phường Nghĩa Tân", "Phường Mai Dịch", "Phường Dịch Vọng", "Phường Dịch Vọng Hậu", "Phường Quan Hoa", "Phường Yên Hòa", "Phường Trung Hòa"];
+	var DongDa = ["Phường Cát Linh", "Phường Văn Miếu", "Phường Quốc Tử Giám", "Phường Láng Thượng", "Phường Ô Chợ Dừa", "Phường Văn Chương", "Phường Hàng Bột", "Phường Láng Hạ", "Phường Khâm Thiên", "Phường Thổ Quan", "Phường Nam Đồng", "Phường Trung Phụng", "Phường Quang Trung", "Phường Trung Liệt", "Phường Phương Liên", "Phường Thịnh Quang", "Phường Trung Tự", "Phường Kim Liên", "Phường Phương Mai", "Phường Ngã Tư Sở", "Phường Khương Thượng"];
+	var HaiBaTrung = ["Phường Nguyễn Du", "Phường Bạch Đằng", "Phường Phạm Đình Hổ", "Phường Bùi Thị Xuân", "Phường Ngô Thì Nhậm", "Phường Lê Đại Hành", "Phường Đồng Nhân", "Phường Phố Huế", "Phường Đống Mác", "Phường Thanh Lương", "Phường Thanh Nhàn", "Phường Cầu Dền", "Phường Bách Khoa", "Phường Đồng Tâm", "Phường Vĩnh Tuy", "Phường Bạch Mai", "Phường Bạch Lôi", "Phường Quỳnh Lôi", "Phường Minh Khai", "Phường Trương Định"];
+	var HoangMai = ["Phường Thanh Trì", "Phường Vĩnh Hưng", "Phường Định Công", "Phường Mai Động", "Phường Tương Mai","Phường Đại Kim", "Phường Tân Mai", "Phường Hoàng Văn Thụ", "Phường Giáp Bát", "Phường Lĩnh Nam", "Phường Thịnh Liệt", "Phường Trần Phú", "Phường Hoàng Liệt", "Phường Yên Sở"];
+	var ThanhXuan = ["Phường Nhân Chính", "Phường Thượng Đình", "Phường Khương Trung", "Phường Khương Mai", "Phường Thanh Xuân Trung", "Phường Phương Liệt", "Phường Hạ Đình", "Phường Khương Đình", "Phường Thanh Xuân Bắc", "Phường Thanh Xuân Nam", "Phường Kim Giang"];
+	var SocSon = ["Thị trấn Sóc Sơn", "Xã Bắc Sơn", "Xã Minh Trí", "Xã Hồng Kì", "Xã Nam Sơn", "Xã Trung Giã", "Xã Tân Hưng", "Xã Minh Phú", "Xã Phù Linh", "Xã Bắc Sơn", "Xã Tân Minh", "Xã Quang Tiến", "Xã Hiền Linh", "Xã Tân Dân", "Xã Tiên Dược", "Xã Việt Long", "Xã Xuân Giang", "Xã Mai Đình", "Xã Đức hòa", "Xã Thanh Xuân", "Xã Đông Xuân", "Xã Kim Lũ", "Xã Phú Cường", "Xã Phú Minh", "Xã Phù Lỗ", "Xã Xuân Thu"];
+	var DongAnh = ["Thị trấn Đông Anh", "Xã Xuân Nộn", "Xã Thụy Lâm", "Xã Bắc Hồng", "Xã Nguyên Khê", "Xã Nam Hồng", "Xã Tiên Dương", "Xã Vân Hà", "Xã Uy Nỗ", "Xã Vân Nội", "Xã Liên Hà", "Xã Việt Hùng", "Xã Kim Nỗ", "Xã Kim Chung", "Xã Dục Tú", "Xã Đại Mạch", "Xã Vĩnh Ngọc", "Xã Cỗ Loa", "Xã Hải Bối", "Xã Xuân Canh", "Xã Võng La", "Xã Tầm Xá", "Xã Mai Lâm", "Xã Đông Hội"];
+	var GiaLam = ["Thị trấn Yên Viên", "Thị trấn Trâu Quỳ", "Xã Yên Thường", "Xã Yên Viên", "Xã Ninh Hiệp", "Xã Đình Xuyên", "Xã Dương Hà", "Xã Phù Đổng", "Xã Trung Mầu", "Xã Lệ Chi", "Xã Cổ Bi", "Xã Đặng Xá", "Xã Phú Thị", "Xã Kim Sơn", "Xã Dương Quang", "Xã Dương Xá", "Xã Đông Dư", "Xã Đa Tốn", "Xã Kiêu Kỵ", "Xã Bát Tràng", "Xã Kim Lan", "Xã Văn Đức"];
+	var NamTuLiem = ["Phường Cầu Diễn", "Phường Đại Mỗ", "Phường Mễ Trì", "Phường Mỹ Đình 1", "Phường Mỹ Đình 2", "Phường Phú Đô", "Phường Phương Canh", "Phường Tây Mỗ", "Phường Trung Văn", "Phường Xuân Phương"];
+	var ThanhTri = ["Thị trấn Văn Điển", "Xã Tân Triều", "Xã Thanh Liệt", "Xã Tả Thanh Oai", "Xã Hữu Hòa", "Xã Tam Hiệp", "Xã Tứ Hiệp", "Xã Yên Mỹ", "Xã Vĩnh Quỳnh", "Xã Ngũ Hiệp", "Xã Duyên Hà", "Xã Ngọc Hồi", "Xã Vạn Phúc", "Xã Đại Áng", "Xã Liên Ninh", "Xã Đông Mỹ"];
+	var BacTuLiem = ["Phường Cổ Nhuế 1", "Phường Cổ Nhuế 2", "Phường Đông Ngạc", "Phường Đức Thắng", "Phường Liên Mạc", "Phường Minh Khai", "Phường Phú Diễn", "Phường Phúc Diễn", "Phường Tây Tựu", "Phường Thụy Phương", "Phường Thượng Cát", "Phường Xuân Đỉnh", "Phường Xuân Tảo"];
+	var MeLinh = ["Xã Đại Thịnh", "Xã Kim Hoa", "Xã Thạch Đà", "Xã Tiến Thắng", "Xã Tự Lập", "Xã Quang Minh", "Xã Thanh Lâm", "Xã Tam Đồng", "Xã Liên Mạc", "Xã Vạn Yên", "Xã Chu Phan", "Xã Tiến Thịnh", "Xã Mê Linh", "Xã Văn Khê", "Xã Hoàng Kim", "Xã Tiền Phong", "Xã Tráng Việt", "Xã Thị trấn Đông Chi"];
+	var HaDong = ["Phường Nguyễn Trãi", "Phường Văn Mỗ", "Phường Vạn Phúc", "Phường Yết Kiêu", "Phường Quang Trung", "Phường Văn Quán", "Phường Hà Cầu", "Phường La Khê", "Phường Yên Nghĩa", "Phường Kiến Hưng", "Phường Phú Lãm", "Phường Phú Lương", "Phường Dương Nội", "Phường Đồng Mai", "Phường Biên Giang", "Phường Mộ Lao", "Phường Phú La"];
+	var SonTay = ["Xã Lê Lợi", "Xã Phú Thịnh", "Xã Ngô Quyền", "Xã Quang Trung", "Xã Sơn Lộc", "Xã Xuân Khanh", "Xã Đường Lâm", "Xã Viên Sơn", "Xã Xuân Sơn", "Xã Trung Hưng", "Xã Thanh Mỹ", "Xã Trung Sơn Trầm", "Xã Kim Sơn", "Xã Sơn Đông", "Xã Cổ Đông"];
+	var BaVi = ["Thị trấn Tây Đằng", "Xã Khánh Thượng", "Xã Phú Cường", "Xã Cổ Đô", "Xã Tản Hồng", "Xã Vạn Thắng", "Xã Châu Sơn", "Xã Phong Vân", "Xã Phú Đông", "Xã Phú Phương", "Xã Phú Châu", "Xã Thái Hòa", "Xã Đồng Thái", "Xã Phú Sơn", "Xã Minh Châu", "Xã Vật Lại", "Xã Chu Minh", "Xã Tòng Bạt", "Xã Cẩm Lĩnh", "Xã Sơn Đà", "Xã Đông Quang", "Xã Tiên Phong", "Xã Thụy An", "Xã Cam Thượng", "Xã Thuần Mỹ", "Xã Tản Lĩnh", "Xã Ba Trại", "Xã Minh Quang", "Xã Ba Vì", "Xã Vân Hòa", "Xã Yên Bài"];
+	var PhucTho = ["Thị trấn Phúc Thọ", "Xã Vân Hà", "Xã Vân Phúc", "Xã Vân Nam", "Xã Xuân Phú", "Xã Phương Độ", "Xã Sen Chiểu", "Xã Cẩm Đình", "Xã Võng Xuyên", "Xã Thọ Lộc", "Xã Long Xuyên", "Xã Thượng Cốc", "Xã Hát Môn", "Xã Tích Giang", "Xã Thanh Đa", "Xã Trạch Mỹ Lộc", "Xã Phúc Hòa", "Xã Ngọc Tảo", "Xã Phụng Thượng", "Xã Am Thuấn", "Xã Tam Hiệp", "Xã Hiệp Thuận", "Xã Liên Hiệp"];
+	var DanPhuong = ["Thị trấn Phùng", "Xã Trung Châu", "Xã Thọ An", "Xã Thọ Xuân", "Xã Hồng Hà", "Xã Liên Hồng", "Xã Liên Hà", "Xã Hạ Mỗ", "Xã Liên Trung", "Xã Phương Đình", "Xã Thượng Mỗ", "Xã Tân Hội", "Xã Tân Lập", "Xã Đan Phượng", "Xã Đồng Tháp", "Xã Song Phượng"];
+	var HoaiDuc = ["Thị trấn Trạm Trôi", "Xã Đức Thượng", "Xã Minh Khai", "Xã Dương Liễu", "Xã Di Trạch", "Xã Đức Giang", "Xã Cát Quế", "Xã Kim Chung", "Xã Yên Sở", "Xã Sơn Đồng", "Xã Vân Canh", "Xã Đắc Sở", "Xã Lại Yên", "Xã Tiến Yên", "Xã Song Phương", "Xã An Khánh", "Xã An Thượng", "Xã Vân Côn", "Xã La Phù", "Xã Đông La"];
+	var QuocOai = ["Thị trấn Quốc Oai", "Xã Sài Sơn", "Xã Thượng Cách", "Xã Yên Sơn", "Xã Ngọc Liệp", "Xã Ngọc Mỹ", "Xã Liệp Tuyết", "Xã Thạch Thán", "Xã Đồng Quang", "Xã Phú Cát", "Xã Tuyết Nghĩa", "Xã Nghĩa Hương", "Xã Cộng Hòa", "Xã Tân Phú", "Xã Đại Thành", "Xã Phú Mãn", "Xã Cấn Hữu", "Xã Tân Hòa", "Xã Hòa Thạch", "Xã Đông Yên", "Xã Đông Xuân"];
+	var ThachThat = ["Thị trấn Liên Quan", "Xã Đại Đồng", "Xã Cẩm Yên", "Xã Lại Thượng", "Xã Phú Kim", "Xã Hương Ngải", "Xã Canh Nậu", "Xã Kim Quan", "Xã Dị Nậu", "Xã Bình Yên", "Xã Chàng Sơn", "Xã Thạch Hòa", "Xã Cần Kiệm", "Xã Hữu Bằng", "Xã Phùng Xá", "Xã Tân Xã", "Xã Thạch Xá", "Xã Bình Phú", "Xã Hạ Bằng", "Xã Đồng Trúc", "Xã Yên Trung", "Xã Yên Bình", "Xã Tiến Xuân"];
+	var ChuongMy = ["Thị trấn Chúc Sơn", "Thị trấn Xuân Mai", "Xã Phụng Châu", "Xã Tiên Phương", "Xã Đông Sơn", "Xã Đông Phương Yên", "Xã Phú Nghĩa", "Xã Trường Yên", "Xã Ngọc Hòa", "Xã Thủy Xuân Tiên", "Xã Thanh Bình", "Xã Trung Hòa", "Xã Đại Yên", "Xã Thụy Hương", "Xã Tốt Động", "Xã Lam Điền", "Xã Tân Tiến", "Xã Nam Phương Tiến", "Xã Hợp Đồng", "Xã Hoàng Văn Thụ", "Xã Hoàng Diệu", "Xã Hữu Văn", "Xã Quảng Bị", "Xã Mỹ Lương", "Xã Thượng Vực", "Xã Hồng Phong", "Xã Đồng Phú", "Xã Trần Phú", "Xã Văn Võ", "Xã Đồng Lạc", "Xã Hòa Chính", "Xã Phú Nam An"];
+	var ThanhOai = ["Thị trấn Kim Bài", "Xã Cự Khê", "Xã Bích Hòa", "Xã Mỹ Hưng", "Xã Cao Viên", "Xã Bình Minh", "Xã Tam Hưng", "Xã Thanh Cao", "Xã Thanh Thùy", "Xã Thanh Mai", "Xã Thanh Văn", "Xã Đỗ Động", "Xã Kim An", "Xã Kim Thư", "Xã Phương Trung", "Xã Tân Ước", "Xã Dân Hòa", "Xã Liên Châu", "Xã Cao Dương"];
+	var ThuongTin = ["Thị trấn Thường Tín", "Xã Ninh Sở", "Xã Nhị Khê", "Xã Duyên Thái", "Xã Khánh Hà", "Xã Hòa Bình", "Xã Văn Bình", "Xã Hiền Giang", "Xã Hồng Vân", "Xã Vân Tảo", "Xã Liên Phương", "Xã Văn Phú", "Xã Tự Nhiên", "Xã Tiền Phong", "Xã Hà Hồi", "Xã Thư Phú", "Xã Nguyễn Trãi", "Xã Quất Động", "Xã Chương Dương", "Xã Tân Minh", "Xã Lê Lợi", "Xã Thắng Lợi", "Xã Dũng Tiến", "Xã Thống Nhất", "Xã Nghiêm Xuyên", "Xã Tô Hiệu", "Xã Văn Tự", "Xã Vạn Điểm", "Xã Minh Cường"];
+	var PhuXuyen = ["Thị trấn Phú Minh", "Thị trấn Phú Xuyên", "Xã Hồng Minh", "Xã Phượng Dực", "Xã Văn Nhân", "Xã Thụy Phú", "Xã Tri Trung", "Xã Đại Thắng", "Xã Phú Túc", "Xã Văn Hoàng", "Xã Hồng Thái", "Xã Hoàng Long", "Xã Quang Trung", "Xã Nam Phong", "Xã Nam Chiều", "Xã Tân Dân", "Xã Sơn Hà", "Xã Chuyên Mỹ", "Xã Khai Thái", "Xã Phúc Tiến", "Xã Vân Từ", "Xã Chi Thủy", "Xã Đại Xuyên", "Xã Phú Yên", "Xã Bạch Hạ", "Xã Quang Lãn", "Xã Châu Can", "Xã Minh Tân"];
+	var UngHoa = ["Thị trấn Vân Đình", "Xã Viên An", "Xã Viên Nội", "Xã Hoa Sơn", "Xã Quảng Phú Cầu", "Xã Trường Thịnh", "Xã Cao Thành", "Xã Liên Bạt", "Xã Sơn Công", "Xã Đồng Tiến", "Xã Phương Tú", "Xã Trung Tú", "Xã Đồng Tân", "Xã Tảo Dương Văn", "Xã Vạn Thái", "Xã Minh Đức", "Xã Hòa Lâm", "Xã Hòa Xá", "Xã Trầm Lộng", "Xã Kim Đường", "Xã Hòa Nam", "Xã Hòa Phú", "Xã Đội Bình", "Xã Đại Hùng","Xã Đông Lỗ", "Xã Phù Lưu", "Xã Đại Cường", "Xã Lưu Hoàng", "Xã Hồng Quang"];
+	var MyDuc = ["Thị trấn Đại Nghĩa", "Xã Đồng Tâm", "Xã Thượng Lâm", "Xã Tuy Lai", "Xã Phúc Lâm", "Xã Mỹ Thành", "Xã Bột Xuyên", "Xã An Mỹ", "Xã Hồng Sơn", "Xã Lê Thanh", "Xã Xuy Xá", "Xã Phùng Xá", "Xã Phù Lưu Tế", "Xã Đại Hưng", "Xã Vạn Kim", "Xã Đốc Tín", "Xã Hương Sơn", "Xã Hùng Tiến", "Xã An Tiến", "Xã Hợp Tiến", "Xã Hợp Thanh", "Xã An Phú"];
 
 	var message = document.getElementById('xaPhuongSelect');
 	var value = obj.value;
 	switch(value) 
 	{
-		case 'BaDinh': {
-			var content = "<option>Chọn xã, phường</option>";
+		case 'Quận Ba Đình': {
+			var content = "<option value=\"\">Chọn xã, phường</option>";
 			var i=0;
 			for( i=0; i<BaDinh.length; i++) {
-				content += "<option>" + BaDinh[i] + "</option>";
+				content += "<option value='" + BaDinh[i] + "'>" + BaDinh[i] + "</option>";
 			}
 			message.innerHTML = content;
 			break;
 		}
-		case 'HoanKiem': {
-			var content = "<option>Chọn xã, phường</option>";
+		case 'Quận Hoàn Kiếm': {
+			var content = "<option value=\"\">Chọn xã, phường</option>";
 			var i=0;
 			for( i=0; i<HoanKiem.length; i++) {
-				content += "<option>" + HoanKiem[i] + "</option>";
+				content += "<option value='" + HoanKiem[i] + "'>" + HoanKiem[i] + "</option>";
 			}
 			message.innerHTML = content;
 			break;
 		}
-		case 'TayHo': {
-			var content = "<option>Chọn xã, phường</option>";
+		case 'Quận Tây Hồ': {
+			var content = "<option value=\"\">Chọn xã, phường</option>";
 			var i=0;
 			for( i=0; i<TayHo.length; i++) {
-				content += "<option>" + TayHo[i] + "</option>";
+				content += "<option value='" + TayHo[i] + "'>" + TayHo[i] + "</option>";
 			}
 			message.innerHTML = content;
 			break;
 		}
-		case 'LongBien': {
-			var content = "<option>Chọn xã, phường</option>";
+		case 'Quận Long Biên': {
+			var content = "<option value=\"\">Chọn xã, phường</option>";
 			var i=0;
 			for( i=0; i<LongBien.length; i++) {
-				content += "<option>" + LongBien[i] + "</option>";
+				content += "<option value='" + LongBien[i] + "'>" + LongBien[i] + "</option>";
 			}
 			message.innerHTML = content;
 			break;
 		}
-		case 'CauGiay': {
-			var content = "<option>Chọn xã, phường</option>";
+		case 'Quận Cầu Giấy': {
+			var content = "<option value=\"\">Chọn xã, phường</option>";
 			var i=0;
 			for( i=0; i<CauGiay.length; i++) {
-				content += "<option>" + CauGiay[i] + "</option>";
+				content += "<option value='" + CauGiay[i] + "'>" + CauGiay[i] + "</option>";
 			}
 			message.innerHTML = content;
 			break;
 		}
-		case 'DongDa': {
-			var content = "<option>Chọn xã, phường</option>";
+		case 'Quận Đống Đa': {
+			var content = "<option value=\"\">Chọn xã, phường</option>";
 			var i=0;
 			for( i=0; i<DongDa.length; i++) {
-				content += "<option>" + DongDa[i] + "</option>";
+				content += "<option value='" + DongDa[i] + "'>" + DongDa[i] + "</option>";
 			}
 			message.innerHTML = content;
 			break;
 		}
-		case 'HaiBaTrung': {
-			var content = "<option>Chọn xã, phường</option>";
+		case 'Quận Hai Bà Trưng': {
+			var content = "<option value=\"\">Chọn xã, phường</option>";
 			var i=0;
 			for( i=0; i<HaiBaTrung.length; i++) {
-				content += "<option>" + HaiBaTrung[i] + "</option>";
+				content += "<option value='" + HaiBaTrung[i] + "'>" + HaiBaTrung[i] + "</option>";
 			}
 			message.innerHTML = content;
 			break;
 		}
-		case 'HoangMai': {
-			var content = "<option>Chọn xã, phường</option>";
+		case 'Quận Hoàng Mai': {
+			var content = "<option value=\"\">Chọn xã, phường</option>";
 			var i=0;
 			for( i=0; i<HoangMai.length; i++) {
-				content += "<option>" + HoangMai[i] + "</option>";
+				content += "<option value='" + HoangMai[i] + "'>" + HoangMai[i] + "</option>";
 			}
 			message.innerHTML = content;
 			break;
 		}
-		case 'ThanhXuan': {
-			var content = "<option>Chọn xã, phường</option>";
+		case 'Quận Thanh Xuân': {
+			var content = "<option value=\"\">Chọn xã, phường</option>";
 			var i=0;
 			for( i=0; i<ThanhXuan.length; i++) {
-				content += "<option>" + ThanhXuan[i] + "</option>";
+				content += "<option value='" + ThanhXuan[i] + "'>" + ThanhXuan[i] + "</option>";
 			}
 			message.innerHTML = content;
 			break;
 		}
-		case 'SocSon': {
-			var content = "<option>Chọn xã, phường</option>";
+		case 'Huyện Sóc Sơn': {
+			var content = "<option value=\"\">Chọn xã, phường</option>";
 			var i=0;
 			for( i=0; i<SocSon.length; i++) {
-				content += "<option>" + SocSon[i] + "</option>";
+				content += "<option value='" + SocSon[i] + "'>" + SocSon[i] + "</option>";
 			}
 			message.innerHTML = content;
 			break;
 		}
-		case 'DongAnh': {
-			var content = "<option>Chọn xã, phường</option>";
+		case 'Huyện Đông Anh': {
+			var content = "<option value=\"\">Chọn xã, phường</option>";
 			var i=0;
 			for( i=0; i<DongAnh.length; i++) {
-				content += "<option>" + DongAnh[i] + "</option>";
+				content += "<option value='" + DongAnh[i] + "'>" + DongAnh[i] + "</option>";
 			}
 			message.innerHTML = content;
 			break;
 		}
-		case 'GiaLam': {
-			var content = "<option>Chọn xã, phường</option>";
+		case 'Huyện Gia Lâm': {
+			var content = "<option value=\"\">Chọn xã, phường</option>";
 			var i=0;
 			for( i=0; i<GiaLam.length; i++) {
-				content += "<option>" + GiaLam[i] + "</option>";
+				content += "<option value='" + GiaLam[i] + "'>" + GiaLam[i] + "</option>";
 			}
 			message.innerHTML = content;
 			break;
 		}
-		case 'NamTuLiem': {
-			var content = "<option>Chọn xã, phường</option>";
+		case 'Quận Nam Từ Liêm': {
+			var content = "<option value=\"\">Chọn xã, phường</option>";
 			var i=0;
 			for( i=0; i<NamTuLiem.length; i++) {
-				content += "<option>" + NamTuLiem[i] + "</option>";
+				content += "<option value='" + NamTuLiem[i] + "'>" + NamTuLiem[i] + "</option>";
 			}
 			message.innerHTML = content;
 			break;
 		}
-		case 'ThanhTri': {
-			var content = "<option>Chọn xã, phường</option>";
+		case 'Huyện Thanh Trì': {
+			var content = "<option value=\"\">Chọn xã, phường</option>";
 			var i=0;
 			for( i=0; i<ThanhTri.length; i++) {
-				content += "<option>" + ThanhTri[i] + "</option>";
+				content += "<option value='" + ThanhTri[i] + "'>" + ThanhTri[i] + "</option>";
 			}
 			message.innerHTML = content;
 			break;
 		}
-		case 'BacTuLiem': {
-			var content = "<option>Chọn xã, phường</option>";
+		case 'Quận Bắc Từ Liêm': {
+			var content = "<option value=\"\">Chọn xã, phường</option>";
 			var i=0;
 			for( i=0; i<BacTuLiem.length; i++) {
-				content += "<option>" + BacTuLiem[i] + "</option>";
+				content += "<option value='" + BacTuLiem[i] + "'>" + BacTuLiem[i] + "</option>";
 			}
 			message.innerHTML = content;
 			break;
 		}
-		case 'MeLinh': {
-			var content = "<option>Chọn xã, phường</option>";
+		case 'Huyện Mê Linh': {
+			var content = "<option value=\"\">Chọn xã, phường</option>";
 			var i=0;
 			for( i=0; i<MeLinh.length; i++) {
-				content += "<option>" + MeLinh[i] + "</option>";
+				content += "<option value='" + MeLinh[i] + "'>" + MeLinh[i] + "</option>";
 			}
 			message.innerHTML = content;
 			break;
 		}
-		case 'HaDong': {
-			var content = "<option>Chọn xã, phường</option>";
+		case 'Quận Hà Đông': {
+			var content = "<option value=\"\">Chọn xã, phường</option>";
 			var i=0;
 			for( i=0; i<HaDong.length; i++) {
-				content += "<option>" + HaDong[i] + "</option>";
+				content += "<option value='" + HaDong[i] + "'>" + HaDong[i] + "</option>";
 			}
 			message.innerHTML = content;
 			break;
 		}
-		case 'SonTay': {
-			var content = "<option>Chọn xã, phường</option>";
+		case 'Huyện Sơn Tây': {
+			var content = "<option value=\"\">Chọn xã, phường</option>";
 			var i=0;
 			for( i=0; i<SonTay.length; i++) {
-				content += "<option>" + SonTay[i] + "</option>";
+				content += "<option value='" + SonTay[i] + "'>" + SonTay[i] + "</option>";
 			}
 			message.innerHTML = content;
 			break;
 		}
-		case 'BaVi': {
-			var content = "<option>Chọn xã, phường</option>";
+		case 'Huyện Ba Vì': {
+			var content = "<option value=\"\">Chọn xã, phường</option>";
 			var i=0;
 			for( i=0; i<BaVi.length; i++) {
-				content += "<option>" + BaVi[i] + "</option>";
+				content += "<option value='" + BaVi[i] + "'>" + BaVi[i] + "</option>";
 			}
 			message.innerHTML = content;
 			break;
 		}
-		case 'PhucTho': {
-			var content = "<option>Chọn xã, phường</option>";
+		case 'Huyện Phúc Thọ': {
+			var content = "<option value=\"\">Chọn xã, phường</option>";
 			var i=0;
 			for( i=0; i<PhucTho.length; i++) {
-				content += "<option>" + PhucTho[i] + "</option>";
+				content += "<option value='" + PhucTho[i] + "'>" + PhucTho[i] + "</option>";
 			}
 			message.innerHTML = content;
 			break;
 		}
-		case 'DanPhuong': {
-			var content = "<option>Chọn xã, phường</option>";
+		case 'Huyện Đan Phượng': {
+			var content = "<option value=\"\">Chọn xã, phường</option>";
 			var i=0;
 			for( i=0; i<DanPhuong.length; i++) {
-				content += "<option>" + DanPhuong[i] + "</option>";
+				content += "<option value='" + DanPhuong[i] + "'>" + DanPhuong[i] + "</option>";
 			}
 			message.innerHTML = content;
 			break;
 		}
-		case 'HoaiDuc': {
-			var content = "<option>Chọn xã, phường</option>";
+		case 'Huyện Hoài Đức': {
+			var content = "<option value=\"\">Chọn xã, phường</option>";
 			var i=0;
 			for( i=0; i<HoaiDuc.length; i++) {
-				content += "<option>" + HoaiDuc[i] + "</option>";
+				content += "<option value='" + HoaiDuc[i] + "'>" + HoaiDuc[i] + "</option>";
 			}
 			message.innerHTML = content;
 			break;
 		}
-		case 'QuocOai': {
-			var content = "<option>Chọn xã, phường</option>";
+		case 'Huyện Quốc Oai': {
+			var content = "<option value=\"\">Chọn xã, phường</option>";
 			var i=0;
 			for( i=0; i<QuocOai.length; i++) {
-				content += "<option>" + QuocOai[i] + "</option>";
+				content += "<option value='" + QuocOai[i] + "'>" + QuocOai[i] + "</option>";
 			}
 			message.innerHTML = content;
 			break;
 		}
-		case 'ThachThat': {
-			var content = "<option>Chọn xã, phường</option>";
+		case 'Huyện Thạch Thất': {
+			var content = "<option value=\"\">Chọn xã, phường</option>";
 			var i=0;
 			for( i=0; i<ThachThat.length; i++) {
-				content += "<option>" + ThachThat[i] + "</option>";
+				content += "<option value='" + ThachThat[i] + "'>" + ThachThat[i] + "</option>";
 			}
 			message.innerHTML = content;
 			break;
 		}
-		case 'ChuongMy': {
-			var content = "<option>Chọn xã, phường</option>";
+		case 'Huyện Chương Mỹ': {
+			var content = "<option value=\"\">Chọn xã, phường</option>";
 			var i=0;
 			for( i=0; i<ChuongMy.length; i++) {
-				content += "<option>" + ChuongMy[i] + "</option>";
+				content += "<option value='" + ChuongMy[i] + "'>" + ChuongMy[i] + "</option>";
 			}
 			message.innerHTML = content;
 			break;
 		}
-		case 'ThanhOai': {
-			var content = "<option>Chọn xã, phường</option>";
+		case 'Huyện Thanh Oai': {
+			var content = "<option value=\"\">Chọn xã, phường</option>";
 			var i=0;
 			for( i=0; i<ThanhOai.length; i++) {
-				content += "<option>" + ThanhOai[i] + "</option>";
+				content += "<option value='" + ThanhOai[i] + "'>" + ThanhOai[i] + "</option>";
 			}
 			message.innerHTML = content;
 			break;
 		}
-		case 'ThuongTin': {
-			var content = "<option>Chọn xã, phường</option>";
+		case 'Huyện Thường Tín': {
+			var content = "<option value=\"\">Chọn xã, phường</option>";
 			var i=0;
 			for( i=0; i<ThuongTin.length; i++) {
-				content += "<option>" + ThuongTin[i] + "</option>";
+				content += "<option value='" + ThuongTin[i] + "'>" + ThuongTin[i] + "</option>";
 			}
 			message.innerHTML = content;
 			break;
 		}
-		case 'PhuXuyen': {
-			var content = "<option>Chọn xã, phường</option>";
+		case 'Huyện Phú Xuyên': {
+			var content = "<option value=\"\">Chọn xã, phường</option>";
 			var i=0;
 			for( i=0; i<PhuXuyen.length; i++) {
-				content += "<option>" + PhuXuyen[i] + "</option>";
+				content += "<option value='" + PhuXuyen[i] + "'>" + PhuXuyen[i] + "</option>";
 			}
 			message.innerHTML = content;
 			break;
 		}
-		case 'UngHoa': {
-			var content = "<option>Chọn xã, phường</option>";
+		case 'Huyện Ứng Hòa': {
+			var content = "<option value=\"\">Chọn xã, phường</option>";
 			var i=0;
 			for( i=0; i<UngHoa.length; i++) {
-				content += "<option>" + UngHoa[i] + "</option>";
+				content += "<option value='" + UngHoa[i] + "'>" + UngHoa[i] + "</option>";
 			}
 			message.innerHTML = content;
 			break;
 		}
-		case 'MyDuc': {
-			var content = "<option>Chọn xã, phường</option>";
+		case 'Huyện Mỹ Đức': {
+			var content = "<option value=\"\">Chọn xã, phường</option>";
 			var i=0;
 			for( i=0; i<MyDuc.length; i++) {
-				content += "<option>" + MyDuc[i] + "</option>";
+				content += "<option value='" + MyDuc[i] + "'>" + MyDuc[i] + "</option>";
 			}
 			message.innerHTML = content;
 			break;
 		}
 		case '': {
-			var content = "<option>Chọn xã, phường</option>";
+			var content = "<option value=\"\">Chọn xã, phường</option>";
 			message.innerHTML = content;
 			break;
 		}
@@ -384,18 +384,44 @@ $(".close_login_icon").click( function() {
 
 /*Điều khiển hiển thị của phần menu*/
 if($('html,body').scrollTop()>50){
-         $('#menu_scroll').css("display", "block");
-      }
-      else {
-         $('#menu_scroll').css("display", "none");
-      }
+	$('#menu_scroll').css("display", "block");
+}
+else {
+	$('#menu_scroll').css("display", "none");
+}
 $(window).scroll( function(event) {
 	var pos_body = $('html,body').scrollTop();
       // console.log(pos_body);
       if(pos_body>50){
-         $('#menu_scroll').css("display", "block");
+      	$('#menu_scroll').css("display", "block");
       }
       else {
-         $('#menu_scroll').css("display", "none");
+      	$('#menu_scroll').css("display", "none");
       }
+  });
+
+/*Điều khiển title của các trang hiển thị chi tiết căn phòng*/
+
+/*Hiển thị các lỗi input của khung đăng nhập, đăng ký*/
+$("#submit_signIn_button").click( function() {
+	if(document.getElementById("signIn_password").value == "") {
+		$("#error_input_password_signIn").text(" Bạn chưa nhập mật khẩu!");
+	} else {
+		$("#error_input_password_signIn").text("");
+	} 
+	if(document.getElementById("signIn_password").value != document.getElementById("signIn_password_again").value) {
+		$("#error_input_password_again").text(" Nhập lại mật khẩu sai!");
+	} else {
+		$("#error_input_password_again").text("");
+	}
+	if(document.getElementById("display_name").value == "") {
+		$("#error_input_name_signIn").text(" Bạn chưa nhập mật khẩu!");
+	} else {
+		$("#error_input_name_signIn").text("");
+	} 
+	if(document.getElementById("signIn_email").value == "") {
+		$("#error_input_email_signIn").text(" Bạn chưa nhập email!");
+	} else {
+		$("#error_input_email_signIn").text("");
+	} 
 });

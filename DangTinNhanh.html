@@ -54,11 +54,14 @@
 					<label for="logIn_password">Mật khẩu:</label>
 					<input type="password" class="form-control" id="logIn_password" placeholder="Mật khẩu" name="logIn_password">
 				</div>
+				<div class=" col-xs-offset-1 col-xs-10">
+					<span class="error_input" id="error_input_logIn"></span>
+				</div>
 				<div class="checkbox  col-xs-offset-1 col-xs-10">
 					<label><input type="checkbox" name="remember" style="width: 13px;"> Nhớ tài khoản</label>
 				</div>
 				<div class=" col-xs-offset-1 col-xs-10">
-					<button id="submit_logIn_button" type="submit" class="btn btn-success">Đăng nhập</button>
+					<button id="submit_logIn_button" type="button" class="btn btn-success">Đăng nhập</button>
 				</div>
 			</form>
 		</div>
@@ -75,23 +78,23 @@
 
 			<form action="/action_page.php">
 				<div class="form-group col-xs-offset-1 col-xs-10">
-					<label for="display_name">Tên hiển thị:</label>
+					<label for="display_name">Tên hiển thị: </label> <span class="error_input" id="error_input_name_signIn"></span>
 					<input type="text" class="form-control" id="display_name" placeholder="Tên hiển thị" name="display_name">
 				</div>
 				<div class="form-group  col-xs-offset-1 col-xs-10">
-					<label for="signIn_email">Email:</label>
+					<label for="signIn_email">Email:  </label> <span class="error_input" id="error_input_email_signIn"></span>
 					<input type="email" class="form-control" id="signIn_email" placeholder="Email" name="signIn_email">
 				</div>
 				<div class="form-group  col-xs-offset-1 col-xs-10">
-					<label for="signIn_password">Mật khẩu:</label>
+					<label for="signIn_password">Mật khẩu:</label><span class="error_input" id="error_input_password_signIn"></span>
 					<input type="password" class="form-control" id="signIn_password" placeholder="Mật khẩu" name="signIn_password">
 				</div>
 				<div class="form-group  col-xs-offset-1 col-xs-10">
-					<label for="signIn_password_again">Nhập lại mật khẩu:</label>
+					<label for="signIn_password_again">Nhập lại mật khẩu:  </label><span class="error_input" id="error_input_password_again"></span>
 					<input type="password" class="form-control" id="signIn_password_again" placeholder="Nhập lại mật khẩu" name="signIn_password_again">
 				</div>
 				<div class=" col-xs-offset-1 col-xs-10">
-					<button id="submit_signIn_button" type="submit" class="btn btn-success">Đăng ký</button>
+					<button id="submit_signIn_button" type="button" class="btn btn-success">Đăng ký</button>
 				</div>
 			</form>
 		</div>
@@ -207,51 +210,51 @@
 
 					<div class="col-xs-12"> <!-- Tiêu đề tin -->
 						<div class="col-xs-12">
-							<h4>Tiêu đề tin <span>*</span></h4>
+							<h4>Tiêu đề tin <span>* </span> <span class="error_input" id="error_input_title"></span></h4>
 						</div>
 						<div class="col-xs-12">
-							<input type="text" name="title" maxlength="80" style="width: 100%" placeholder="Hãy đặt tiêu đề đầy đủ ý nghĩa, khách sẽ quan tâm hơn">
+							<input id="input_title" type="text" name="title" maxlength="80" style="width: 100%" placeholder="Hãy đặt tiêu đề đầy đủ ý nghĩa, khách sẽ quan tâm hơn">
 						</div>
 					</div>
 
 					<div class="col-xs-12"> <!-- Chọn loại phòng -->
-						<h4 class="col-xs-12">Chọn loại phòng <span>*</span></h4>
+						<h4 class="col-xs-12">Chọn loại phòng <span>*</span> <span class="error_input" id="error_input_kind_of_room"></span></h4>
 						<div class="col-sm-6 col-xs-12">
-							<input name="KieuPhong" type="radio" value="PhongTro" style="width: 13px;"/> Phòng trọ
+							<input name="KieuPhong" type="radio" value="Phòng trọ" style="width: 13px;"/> Phòng trọ
 						</div>
 						<div class="col-sm-6 col-xs-12">
-							<input name="KieuPhong" type="radio" value="NhaNguyenCan" style="width: 13px;"/> Nhà thuê nguyên căn
+							<input name="KieuPhong" type="radio" value="Nhà nguyên căn" style="width: 13px;"/> Nhà thuê nguyên căn
 						</div>
 						<div class="col-sm-6 col-xs-12">
-							<input  name="KieuPhong" type="radio" value="OGhep" style="width: 13px;"> Tìm người ở ghép
+							<input  name="KieuPhong" type="radio" value="Ở ghép" style="width: 13px;"> Tìm người ở ghép
 						</div>
 					</div>
 
 					<div class="col-xs-12"> <!-- Kiểu vệ sinh -->
-						<h4 class="col-xs-12">Kiểu vệ sinh <span>*</span></h4>
+						<h4 class="col-xs-12">Kiểu vệ sinh <span>*</span> <span class="error_input" id="error_input_kind_of_toilet"></span></h4>
 						<div class="col-sm-6 col-xs-12">
-							<input name="VeSinh" type="radio" value="KhepKin" style="width: 13px;" /> Khép kín
+							<input name="VeSinh" type="radio" value="Khép kín" style="width: 13px;" /> Khép kín
 						</div>
 						<div class="col-sm-6 col-xs-12">
-							<input name="VeSinh" type="radio" value="KhongKhepKin" style="width: 13px;"/> Không khép kín
+							<input name="VeSinh" type="radio" value="Không khép kín" style="width: 13px;"/> Không khép kín
 						</div>
 					</div>
 
 					<div class="col-xs-6"> <!-- Mức giá cho thuê -->
 						<div class="col-xs-12">
-							<h4>Giá cho thuê <span>*</span></h4>
+							<h4>Giá cho thuê <span>*</span> <span class="error_input" id="error_input_room_price"></span></h4>
 						</div>
 						<div class="col-xs-12">
-							<input type="number" name="price" min="0" placeholder="Giá cho thuê(VNĐ)">
+							<input id="input_room_price" type="number" name="price" min="0" placeholder="Giá cho thuê(VNĐ)">
 						</div>
 					</div>
 
 					<div class="col-xs-6"> <!-- Diện tích căn phòng -->
 						<div class="col-xs-12">
-							<h4>Diện tích <span>*</span></h4>
+							<h4>Diện tích <span>*</span> <span class="error_input" id="error_input_room_area"></span></h4>
 						</div>
 						<div class="col-xs-12">
-							<input type="number" name="area" min="0" placeholder="Diện tích(đơn vị m²)">
+							<input id="input_room_area" type="number" name="area" min="0" placeholder="Diện tích(đơn vị m²)">
 						</div>
 					</div>
 
@@ -279,10 +282,10 @@
 						</div>
 						<div class="col-xs-12">
 							<select>
-								<option>Tất cả</option>
-								<option>Sinh viên</option>
-								<option>Người đi làm</option>
-								<option>Gia đình</option>
+								<option value="Tất cả">Tất cả</option>
+								<option value="Sinh viên">Sinh viên</option>
+								<option value="Người đi làm">Người đi làm</option>
+								<option value="Gia đình">Gia đình</option>
 							</select>
 						</div>
 					</div>
@@ -303,59 +306,59 @@
 
 					<div class="col-sm-6 col-xs-12"> <!-- Chọn quận huyện -->
 						<div class="col-xs-12">
-							<h4>Quận/huyện <span>*</span></h4>
+							<h4>Quận/huyện <span>*</span> <span class="error_input" id="error_input_district"></span></h4>
 						</div>
 						<div class="col-xs-12">
 							<select onchange="setUpXaPhuongFilter(this)" id="quan_huyen_select">
 								<option value="">Chọn quận, huyện</option>
-								<option value="BaDinh">Quận Ba Đình</option>
-								<option value="BaVi">Huyện Ba Vì</option>
-								<option value="BacTuLiem">Quận Bắc Từ Liêm</option>
-								<option value="CauGiay">Quận Cầu Giấy</option>
-								<option value="ChuongMy">Huyện Chương Mỹ</option>
-								<option value="DanPhuong">Huyện Đan Phượng</option>
-								<option value="DongAnh">Huyện Đông Anh</option>
-								<option value="DongDa">Quận Đống Đa</option>
-								<option value="GiaLam">Huyện Gia Lâm</option>
-								<option value="HaDong">Quận Hà Đông</option>
-								<option value="HaiBaTrung">Quận Hai Bà Trưng</option>
-								<option value="HoaiDuc">Huyện Hoài Đức</option>
-								<option value="HoanKiem">Quận Hoàn Kiếm</option>
-								<option value="HoangMai">Quận Hoàng Mai</option>
-								<option value="LongBien">Quận Long Biên</option>
-								<option value="MeLinh">Huyện Mê Linh</option>
-								<option value="MyDuc">Huyện Mỹ Đức</option>
-								<option value="NamTuLiem">Quận Nam Từ Liêm</option>
-								<option value="PhuXuyen">Huyện Phú Xuyên</option>
-								<option value="PhucTho">Huyện Phúc Thọ</option>
-								<option value="QuocOai">Huyện Quốc Oai</option>
-								<option value="SocSon">Huyện Sóc Sơn</option>
-								<option value="SonTay">Huyện Sơn Tây</option>
-								<option value="TayHo">Quận Tây Hồ</option>
-								<option value="ThachThat">Huyện Thạch Thất</option>
-								<option value="ThanhOai">Huyện Thanh Oai</option>
-								<option value="ThanhTri">Huyện Thanh Trì</option>
-								<option value="ThanhXuan">Quận Thanh Xuân</option>
-								<option value="ThuongTin">Huyện Thường Tín</option>
-								<option value="UngHoa">Huyện Ứng Hòa</option>
+								<option value="Quận Ba Đình">Quận Ba Đình</option>
+								<option value="Huyện Ba Vì">Huyện Ba Vì</option>
+								<option value="Quận Bắc Từ Liêm">Quận Bắc Từ Liêm</option>
+								<option value="Quận Cầu Giấy">Quận Cầu Giấy</option>
+								<option value="Huyện Chương Mỹ">Huyện Chương Mỹ</option>
+								<option value="Huyện Đan Phượng">Huyện Đan Phượng</option>
+								<option value="Huyện Đông Anh">Huyện Đông Anh</option>
+								<option value="Quận Đống Đa">Quận Đống Đa</option>
+								<option value="Huyện Gia Lâm">Huyện Gia Lâm</option>
+								<option value="Quận Hà Đông">Quận Hà Đông</option>
+								<option value="Quận Hai Bà Trưng">Quận Hai Bà Trưng</option>
+								<option value="Huyện Hoài Đức">Huyện Hoài Đức</option>
+								<option value="Quận Hoàn Kiếm">Quận Hoàn Kiếm</option>
+								<option value="Quận Hoàng Mai">Quận Hoàng Mai</option>
+								<option value="Quận Long Biên">Quận Long Biên</option>
+								<option value="Huyện Mê Linh">Huyện Mê Linh</option>
+								<option value="Huyện Mỹ Đức">Huyện Mỹ Đức</option>
+								<option value="Quận Nam Từ Liêm">Quận Nam Từ Liêm</option>
+								<option value="Huyện Phú Xuyên">Huyện Phú Xuyên</option>
+								<option value="Huyện Phúc Thọ">Huyện Phúc Thọ</option>
+								<option value="Huyện Quốc Oai">Huyện Quốc Oai</option>
+								<option value="Huyện Sóc Sơn">Huyện Sóc Sơn</option>
+								<option value="Huyện Sơn Tây">Huyện Sơn Tây</option>
+								<option value="Quận Tây Hồ">Quận Tây Hồ</option>
+								<option value="Huyện Thạch Thất">Huyện Thạch Thất</option>
+								<option value="Huyện Thanh Oai">Huyện Thanh Oai</option>
+								<option value="Huyện Thanh Trì">Huyện Thanh Trì</option>
+								<option value="Quận Thanh Xuân">Quận Thanh Xuân</option>
+								<option value="Huyện Thường Tín">Huyện Thường Tín</option>
+								<option value="Huyện Ứng Hòa">Huyện Ứng Hòa</option>
 							</select>
 						</div>
 					</div>
 
 					<div class="col-sm-6 col-xs-12"> <!-- Chọn xã phường -->
 						<div class="col-xs-12">
-							<h4>Xã/phường <span>*</span></h4>
+							<h4>Xã/phường <span>*</span> <span class="error_input" id="error_input_xaPhuong"></span></h4>
 						</div>
 						<div class="col-xs-12">
 							<select id="xaPhuongSelect">
-								<option class="select_filter">Chọn xã, phường</option>
+								<option value="" class="select_filter">Chọn xã, phường</option>
 							</select>
 						</div>
 					</div>
 
 					<div class="col-xs-12"> <!-- Nhập địa chỉ chính xác -->
 						<div class="col-xs-12">
-							<h4>Địa chỉ chính xác <span>*</span></h4>
+							<h4>Địa chỉ chính xác <span>*</span> <span class="error_input" id="error_input_address"></span></h4>
 						</div>
 						<div class="col-xs-12">
 							<input type="text" name="" placeholder="Hãy nhập địa chỉ chính xác để khách dễ tìm hơn" id="input_exacly_address">
@@ -378,10 +381,10 @@
 
 					<div class="col-sm-6 col-xs-12"> <!-- Số điện thoại chủ trọ -->
 						<div class="col-xs-12">
-							<h4>Số điện thoại <span>*</span></h4>
+							<h4>Số điện thoại <span>*</span> <span class="error_input" id="error_input_phone_number"></span></h4>
 						</div>
 						<div class="col-xs-12">
-							<input type="number" name="">
+							<input id="input_phone_number" type="number" name="">
 						</div>
 					</div>
 
@@ -392,13 +395,13 @@
 
 					<div class="col-xs-12"> <!-- Mô tả chi tiết căn phòng -->
 						<div class="col-xs-12">
-							<h4>Mô tả <span>*</span></h4>
+							<h4>Mô tả <span>*</span> <span class="error_input" id="error_input_describle"></span></h4>
 						</div>
 						<div class="col-xs-12">
 							<p class="notes">Giới thiệu mô tả về tin đăng của bạn. Ví dụ: Khu nhà có vị trí thuận lợi: Gần công viên, gần trường học ... Tổng diện tích 52m2, đường đi ô tô vào tận cửa</p>
 						</div>
 						<div class="col-xs-12">
-							<textarea rows="5"></textarea>
+							<textarea id="input_room_describle" rows="5"></textarea>
 						</div>
 					</div>
 
@@ -416,7 +419,8 @@
 					</div>
 
 					<div class="col-xs-12" style="width: 100%; text-align: center;"> <!-- Nút đăng tin -->
-						<a href="#" class="btn btn-success" role="button" style="display: inline-block;">Đăng tin</a>
+						<!-- <a href="" id="upload_room_button" class="btn btn-success" role="button" style="display: inline-block;">Đăng tin</a> -->
+						<button id="upload_room_button" type="button" class="btn btn-success">Đăng tin</button>
 					</div>
 				</div>
 			</div>
@@ -426,7 +430,7 @@
 				<h3>Hướng dẫn đăng tin</h3>
 				<b>
 					<p>
-						- Thông tin có dấu <span>*</span> là bắt buộc.
+						- Thông tin có dấu <span style="color: red;">*</span> là bắt buộc.
 					</p>
 					<p>
 						- Các thông tin phải viết bằng Tiếng Việt có dấu, đúng chính tả, không viết tắt.
@@ -487,6 +491,7 @@
 	</script>
 
 	<!-- Nhúng file javascript -->
+	<script type="text/javascript" src="scripts/scriptDangTinNhanh.js"></script>
 	<script type="text/javascript" src="scripts/Script.js"></script> 
 </body>
 </html>

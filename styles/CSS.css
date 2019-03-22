@@ -14,6 +14,7 @@
 #path {
 	background-color: #eae8e8;
 	padding: 5px 15px;
+	margin-top: 20px;
 }
 
 .title_of_news {
@@ -127,4 +128,8 @@ button.login {
 	position: fixed;
 	margin-bottom: 0px;
 	width: 100%;
+}
+
+.error_input {
+	color: red;
 }
