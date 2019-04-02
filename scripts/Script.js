@@ -415,7 +415,7 @@ $("#submit_signIn_button").click( function() {
 		$("#error_input_password_again").text("");
 	}
 	if(document.getElementById("display_name").value == "") {
-		$("#error_input_name_signIn").text(" Bạn chưa nhập mật khẩu!");
+		$("#error_input_name_signIn").text(" Bạn chưa nhập tên hiển thị!");
 	} else {
 		$("#error_input_name_signIn").text("");
 	} 
@@ -425,3 +425,12 @@ $("#submit_signIn_button").click( function() {
 		$("#error_input_email_signIn").text("");
 	} 
 });
+
+function validateSignInForm() {
+	if (document.getElementById("signIn_password").value == ""
+		|| document.getElementById("signIn_password").value != document.getElementById("signIn_password_again").value
+		|| document.getElementById("display_name").value == ""
+		|| document.getElementById("signIn_email").value == "") {
+		return false;
+	}
+}

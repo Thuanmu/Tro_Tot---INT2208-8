@@ -1,6 +1,5 @@
 /*Các lỗi input*/
 $("#upload_room_button").click( function() {
-
 	/*Nhập tiêu đề*/
 	if(document.getElementById("input_title").value == "") {
 		$("#error_input_title").text(" Bạn chưa nhập tiêu đề!");
@@ -60,11 +59,11 @@ $("#upload_room_button").click( function() {
 	/*Kiểm tra xem đã chọn kiểu phòng chưa*/
 	var checkboxKieuPhong = document.getElementsByName("KieuPhong");
 	var KieuPhongChecked = false;
-                for (var i = 0; i < checkboxKieuPhong.length; i++){
-                    if (checkboxKieuPhong[i].checked === true){
-                        KieuPhongChecked = true;
-                    }
-                }
+    for (var i = 0; i < checkboxKieuPhong.length; i++){
+        if (checkboxKieuPhong[i].checked === true){
+            KieuPhongChecked = true;
+        }
+    }
     if(KieuPhongChecked === false) {
     	$("#error_input_kind_of_room").text("Bạn chưa chọn kiểu phòng!");
     } else {
@@ -74,14 +73,49 @@ $("#upload_room_button").click( function() {
     /*Kiểm tra xem đã chọn kiểu vệ sinh chưa*/
     var checkboxKieuVeSinh = document.getElementsByName("VeSinh");
 	var KieuVeSinhChecked = false;
-                for (var i = 0; i < checkboxKieuVeSinh.length; i++){
-                    if (checkboxKieuVeSinh[i].checked === true){
-                        KieuVeSinhChecked = true;
-                    }
-                }
+    for (var i = 0; i < checkboxKieuVeSinh.length; i++){
+        if (checkboxKieuVeSinh[i].checked === true){
+            KieuVeSinhChecked = true;
+        }
+    }
     if(KieuVeSinhChecked === false) {
     	$("#error_input_kind_of_toilet").text("Bạn chưa chọn kiểu vệ sinh!");
     } else {
     	$("#error_input_kind_of_toilet").text("");
     }
 });
+
+function validateForm() {
+			if(document.getElementById("input_title").value == ""
+				|| document.getElementById("input_room_price").value == ""
+				|| document.getElementById("input_room_area").value == ""
+				|| document.getElementById("quan_huyen_select").value == ""
+				|| document.getElementById("xaPhuongSelect").value == ""
+				|| document.getElementById("input_exacly_address").value == ""
+				|| document.getElementById("input_phone_number").value == ""
+				|| document.getElementById("input_room_describle").value == "") {
+				return false;
+			}
+			
+			var checkboxKieuPhong = document.getElementsByName("KieuPhong");
+			var KieuPhongChecked = false;
+	            for (var i = 0; i < checkboxKieuPhong.length; i++){
+	                if (checkboxKieuPhong[i].checked === true){
+	                    KieuPhongChecked = true;
+	                }
+	            }
+	            if (KieuPhongChecked == false) {
+	            	return false;
+	            }
+	
+	            var checkboxKieuVeSinh = document.getElementsByName("VeSinh");
+			var KieuVeSinhChecked = false;
+	            for (var i = 0; i < checkboxKieuVeSinh.length; i++){
+	                if (checkboxKieuVeSinh[i].checked === true){
+	                    KieuVeSinhChecked = true;
+	                }
+	            }
+	            if(KieuVeSinhChecked == false) {
+	            	return false;
+	            }
+		}
